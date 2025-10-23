@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    android:background="@drawable/background_image">
+
+    <!-- ========================================= -->
+    <!-- CONVENCIÓN DE NOMBRES DE IDs:
+         * iv = ImageView
+         * til = TextInputLayout
+         * et = EditText
+         * btn = Button
+         * tv = TextView
+    -->
+    <!-- ========================================= -->
+
+    <!-- ========================================= -->
+    <!-- LOGO DE PLANET EXPRESS EN LA PARTE SUPERIOR -->
+    <!-- ========================================= -->
+    <ImageView
+        android:id="@+id/ivPlanetExpressLogo"
+        android:layout_width="415dp"
+        android:layout_height="313dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginEnd="32dp"
+        android:contentDescription="Planet Express Logo"
+        android:scaleType="centerCrop"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.504"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/logo" />
+
+    <!-- ========================================= -->
+    <!-- CAMPO DE EMAIL CON ICONO DE SOBRE -->
+    <!-- ========================================= -->
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/tilEmailContainer"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginEnd="32dp"
+        android:layout_marginTop="60dp"
+        app:startIconDrawable="@drawable/ic_email"
+        app:startIconTint="#76D3A9"
+        app:hintEnabled="false"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/ivPlanetExpressLogo">
+
+        <!-- Input donde el usuario escribe su email -->
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/etEmailInput"
+            android:layout_width="210dp"
+            android:layout_height="wrap_content"
+            android:background="@drawable/edit_text_border"
+            android:hint="Email"
+            android:inputType="textEmailAddress"
+            android:fontFamily="monospace"
+            android:textStyle="bold"
+            android:paddingStart="56dp"
+            android:paddingTop="16dp"
+            android:paddingEnd="16dp"
+            android:paddingBottom="16dp"
+            android:textColor="#E8F5E9"
+            android:textColorHint="#E8D5B7"
+            android:textSize="20sp" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <!-- ========================================= -->
+    <!-- CAMPO DE PASSWORD CON ICONO DE CANDADO -->
+    <!-- Incluye botón de mostrar/ocultar contraseña -->
+    <!-- ========================================= -->
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/tilPasswordContainer"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginEnd="32dp"
+        android:layout_marginTop="24dp"
+        app:startIconDrawable="@drawable/ic_lock"
+        app:startIconTint="#B19CD9"
+        app:hintEnabled="false"
+        app:endIconMode="password_toggle"
+        app:endIconTint="#A5D6A7"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tilEmailContainer">
+
+        <!-- Input donde el usuario escribe su contraseña -->
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/etPasswordInput"
+            android:layout_width="210dp"
+            android:layout_height="wrap_content"
+            android:background="@drawable/edit_text_border"
+            android:hint="Password"
+            android:inputType="textPassword"
+            android:fontFamily="monospace"
+            android:textStyle="bold"
+            android:paddingStart="56dp"
+            android:paddingTop="16dp"
+            android:paddingEnd="16dp"
+            android:paddingBottom="16dp"
+            android:textColor="#E8F5E9"
+            android:textColorHint="#E8D5B7"
+            android:textSize="20sp" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <!-- ========================================= -->
+    <!-- BOTÓN PRINCIPAL DE INICIAR SESIÓN -->
+    <!-- Estilo retro con borde naranja -->
+    <!-- ========================================= -->
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnLoginSubmit"
+        android:layout_width="0dp"
+        android:layout_height="70dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginEnd="32dp"
+        android:layout_marginTop="40dp"
+        android:background="@drawable/button_login"
+        android:text="INICIAR SESIÓN"
+        android:textColor="#E8D5B7"
+        android:textSize="28sp"
+        android:fontFamily="sans-serif-black"
+        android:letterSpacing="0.01"
+        app:backgroundTint="@null"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tilPasswordContainer" />
+
+    <!-- ========================================= -->
+    <!-- TEXTO PARA IR A LA PANTALLA DE REGISTRO -->
+    <!-- En la parte inferior de la pantalla -->
+    <!-- ========================================= -->
+    <TextView
+        android:id="@+id/tvRegisterLink"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:layout_marginBottom="32dp"
+        android:fontFamily="sans-serif-condensed"
+        android:text="¿No tienes cuenta? REGÍSTRATE"
+        android:textColor="#76D3A9"
+        android:textSize="25sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.494"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnLoginSubmit" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
